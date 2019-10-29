@@ -1,102 +1,54 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
   };
 </script>
-
-
-  
-
-
-
 
   <meta name="keywords" content="前端">
 <meta property="og:type" content="website">
@@ -107,18 +59,17 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="天方夜坛">
 
+<link rel="canonical" href="http://blog.daolanfler.com/">
 
 
-
-
-
-  <link rel="canonical" href="http://blog.daolanfler.com/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
@@ -130,15 +81,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -147,9 +91,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -163,230 +106,124 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">天方夜坛</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://blog.daolanfler.com/2019/03/27/throw-an-error-in-Promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/destiny.jpg">
       <meta itemprop="name" content="DAOLANFLER">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/destiny.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="天方夜坛">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/27/throw-an-error-in-Promise/" class="post-title-link" itemprop="url">throw an error in Promise</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/03/27/throw-an-error-in-Promise/" class="post-title-link" itemprop="url">throw an error in Promise</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2019-03-27 21:35:48" itemprop="dateCreated datePublished" datetime="2019-03-27T21:35:48+08:00">2019-03-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-07-24 23:17:38" itemprop="dateModified" datetime="2019-07-24T23:17:38+08:00">2019-07-24</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/03/27/throw-an-error-in-Promise/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/27/throw-an-error-in-Promise/" itemprop="commentCount"></span>
-                </a>
               </span>
-            
-          
 
           
-          
-
-          
-
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/27/throw-an-error-in-Promise/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/27/throw-an-error-in-Promise/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -394,12 +231,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h1 id="在-Promsie-中抛出异常"><a href="#在-Promsie-中抛出异常" class="headerlink" title="在 Promsie 中抛出异常"></a>在 Promsie 中抛出异常</h1><p>之前有一次想通过在 promise 中抛出异常，通过<code>try catch</code>捕获到异常，然后实现某种逻辑。当时搜了一下，有人说用 <code>setTimeout</code>，那个时候我对 <code>event loop</code>、<code>microtask &amp; macrotask</code> 还没有什么概念。现在我也记不得当时的问题是什么了。反正搜到一个 <a href="https://stackoverflow.com/questions/30715367/why-can-i-not-throw-inside-a-promise-catch-handlerå" target="_blank" rel="noopener">stackoverflow 问题</a>。</p>
+          <h1 id="在-Promsie-中抛出异常"><a href="#在-Promsie-中抛出异常" class="headerlink" title="在 Promsie 中抛出异常"></a>在 Promsie 中抛出异常</h1><p>之前有一次想通过在 promise 中抛出异常，通过<code>try catch</code>捕获到异常，然后实现某种逻辑。当时搜了一下，有人说用 <code>setTimeout</code>，那个时候我对 <code>event loop</code>、<code>microtask &amp; macrotask</code> 还没有什么概念。现在我也记不得当时的问题是什么了。反正搜到一个 <a href="https://stackoverflow.com/questions/30715367/why-can-i-not-throw-inside-a-promise-catch-handlerå" target="_blank" rel="noopener">stackoverflow 问题</a>。</p>
 <p>最近了解了一下 event loop 和 microtask &amp; macrotask 相关内容，再回顾这个问题就清除了很多。<code>try catch</code> 是不能捕获异步抛出的异常的…</p>
 <p>首先定义这两个函数，返回 promise 对象：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">do1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'do1'</span>)</span><br><span class="line">    setTimeout(resolve, <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">do2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'do2'</span>))</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -414,160 +246,76 @@
 <li>一篇关于 <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" rel="noopener">task-microtask-queues-schedules</a> 的博客</li>
 </ol>
 
-          
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://blog.daolanfler.com/2019/03/21/VS-Code-配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/destiny.jpg">
       <meta itemprop="name" content="DAOLANFLER">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/destiny.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="天方夜坛">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/21/VS-Code-配置/" class="post-title-link" itemprop="url">VS Code 配置</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/03/21/VS-Code-配置/" class="post-title-link" itemprop="url">VS Code 配置</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2019-03-21 21:43:56" itemprop="dateCreated datePublished" datetime="2019-03-21T21:43:56+08:00">2019-03-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-03-27 22:56:46" itemprop="dateModified" datetime="2019-03-27T22:56:46+08:00">2019-03-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/03/21/VS-Code-配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/21/VS-Code-配置/" itemprop="commentCount"></span>
-                </a>
               </span>
-            
-          
 
           
-          
-
-          
-
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/21/VS-Code-配置/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/21/VS-Code-配置/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -575,12 +323,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>字体一般只要是等宽就行了。推荐一款很好用的等宽字体 <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">FiraCode</a>，可以开启 Font Legatures（连字符），只需在设置里面打开就行：</p>
+          <h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p>字体一般只要是等宽就行了。推荐一款很好用的等宽字体 <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">FiraCode</a>，可以开启 Font Legatures（连字符），只需在设置里面打开就行：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"editor.fontLigatures": true,</span><br></pre></td></tr></table></figure>
 <h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>ctrl + shift + p ，输入 shortcut，可以看到<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf" target="_blank" rel="noopener">快捷键参考</a>，一些多行编辑的快捷键可以记一下提升开发速率。如 ctrl + alt + shit + ArrowKey、ctrl + p 等等。可以打开 screencast mode 用来演示。</p>
 <p><a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="noopener">Emmet</a>。可以自定义很多操作，具体可以看文档。这里是一个绑定快捷键进行数学运算的例子：</p>
@@ -611,160 +354,76 @@
 <p>下面是我的设置，仅供参考：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"editor.tabSize"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">"editor.fontLigatures"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"editor.fontFamily"</span>: <span class="string">"'Fira Code', Consolas, monospace, 'Segoe UI Emoji'"</span>,</span><br><span class="line">  <span class="attr">"editor.formatOnPaste"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"workbench.iconTheme"</span>: <span class="string">"material-icon-theme"</span>,</span><br><span class="line">  <span class="attr">"files.autoSave"</span>: <span class="string">"onFocusChange"</span>,</span><br><span class="line">  <span class="attr">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"eslint.alwaysShowStatus"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"eslint.validate"</span>: [</span><br><span class="line">    <span class="string">"javascriptreact"</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"language"</span>: <span class="string">"vue"</span>,</span><br><span class="line">      <span class="attr">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"language"</span>: <span class="string">"javascript"</span>,</span><br><span class="line">      <span class="attr">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"language"</span>: <span class="string">"html"</span>,</span><br><span class="line">      <span class="attr">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"eslint.options"</span>: &#123;</span><br><span class="line">    <span class="attr">"extensions"</span>: [<span class="string">".html"</span>, <span class="string">".js"</span>, <span class="string">".vue"</span>, <span class="string">".jsx"</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"terminal.integrated.shell.windows"</span>: <span class="string">"C:\\Program Files\\Git\\bin\\bash.exe"</span>,</span><br><span class="line">  <span class="attr">"material-icon-theme.folders.theme"</span>: <span class="string">"classic"</span>,</span><br><span class="line">  <span class="attr">"window.zoomLevel"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"files.associations"</span>: &#123;</span><br><span class="line">    <span class="attr">"*.vue"</span>: <span class="string">"vue"</span>,</span><br><span class="line">    <span class="attr">"*.wxss"</span>: <span class="string">"css"</span>,</span><br><span class="line">    <span class="attr">"*.wxml"</span>: <span class="string">"html"</span>,</span><br><span class="line">    <span class="attr">"*.cjson"</span>: <span class="string">"jsonc"</span>,</span><br><span class="line">    <span class="attr">"*.wxs"</span>: <span class="string">"javascript"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"explorer.openEditors.visible"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"emmet.includeLanguages"</span>: &#123;</span><br><span class="line">    <span class="attr">"vue-html"</span>: <span class="string">"html"</span>,</span><br><span class="line">    <span class="attr">"wxml"</span>: <span class="string">"html"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"prettier.disableLanguages"</span>: [],</span><br><span class="line">  <span class="attr">"prettier.printWidth"</span>: <span class="number">120</span>,</span><br><span class="line">  <span class="attr">"prettier.semi"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"prettier.singleQuote"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"material-icon-theme.showReloadMessage"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"path-intellisense.mappings"</span>: &#123;</span><br><span class="line">    <span class="attr">"/"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">    <span class="attr">"@"</span>: <span class="string">"$&#123;workspaceRoot&#125;/src"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"gitlens.advanced.messages"</span>: &#123;</span><br><span class="line">    <span class="attr">"suppressShowKeyBindingsNotice"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"sync.gist"</span>: <span class="string">"009cbd0453e5d8f4b4aad41e2ec5ca62"</span>,</span><br><span class="line">  <span class="attr">"sync.quietSync"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"sync.askGistName"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"sync.removeExtensions"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"sync.syncExtensions"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"sync.autoDownload"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"sync.autoUpload"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"sync.forceDownload"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"diffEditor.ignoreTrimWhitespace"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"python.jediEnabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"workbench.startupEditor"</span>: <span class="string">"newUntitledFile"</span>,</span><br><span class="line">  <span class="attr">"workbench.colorTheme"</span>: <span class="string">"One Dark Pro Vivid"</span>,</span><br><span class="line">  <span class="attr">"vetur.format.defaultFormatter.js"</span>: <span class="string">"prettier-eslint"</span>,</span><br><span class="line">  <span class="attr">"vetur.format.defaultFormatterOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"prettier"</span>: &#123;</span><br><span class="line">      <span class="attr">"semi"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"singleQuote"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"tabWidth"</span>: <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"vetur.completion.useScaffoldSnippets"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"vetur.validation.template"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"diffEditor.renderSideBySide"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"files.eol"</span>: <span class="string">"\n"</span>,</span><br><span class="line">  <span class="attr">"editor.minimap.enabled"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"editor.suggest.localityBonus"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"gitlens.codeLens.recentChange.enabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"gitlens.codeLens.authors.enabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"gitlens.codeLens.enabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"tslint.autoFixOnSave"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"explorer.confirmDelete"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"breadcrumbs.enabled"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"git.enableSmartCommit"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"git.autofetch"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"editor.suggestSelection"</span>: <span class="string">"first"</span>,</span><br><span class="line">  <span class="attr">"workbench.settings.openDefaultSettings"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"vetur.format.defaultFormatter.html"</span>: <span class="string">"prettier"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://blog.daolanfler.com/2019/03/10/img-onload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/destiny.jpg">
       <meta itemprop="name" content="DAOLANFLER">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/destiny.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="天方夜坛">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/10/img-onload/" class="post-title-link" itemprop="url">img onload</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/03/10/img-onload/" class="post-title-link" itemprop="url">img onload</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2019-03-10 18:46:14" itemprop="dateCreated datePublished" datetime="2019-03-10T18:46:14+08:00">2019-03-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-03-21 21:45:39" itemprop="dateModified" datetime="2019-03-21T21:45:39+08:00">2019-03-21</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/03/10/img-onload/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/10/img-onload/" itemprop="commentCount"></span>
-                </a>
               </span>
-            
-          
 
           
-          
-
-          
-
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/10/img-onload/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/10/img-onload/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -772,12 +431,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h1 id="lt-img-gt-load-事件"><a href="#lt-img-gt-load-事件" class="headerlink" title="&lt;img&gt; load 事件"></a><code>&lt;img&gt;</code> load 事件</h1><p>最近有一个需求，需要用到 canvas drawImage。看了一下 MDN 上的 canvas 教程，刚开始写出来是这样的：</p>
+          <h1 id="lt-img-gt-load-事件"><a href="#lt-img-gt-load-事件" class="headerlink" title="&lt;img&gt; load 事件"></a><code>&lt;img&gt;</code> load 事件</h1><p>最近有一个需求，需要用到 canvas drawImage。看了一下 MDN 上的 canvas 教程，刚开始写出来是这样的：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">img.src = <span class="string">`<span class="subst">$&#123;prefix&#125;</span>avatar.png`</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  ctx.drawImage(x, y, width, height)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样写发现有时候能把图片画上去，有时候不能。查看 <a href="https://developer.mozilla.org/en-US/docs/Web/Events/load" target="_blank" rel="noopener">load 事件</a>的定义：</p>
 <blockquote>
@@ -792,160 +446,76 @@
 <li><a href="https://www.google.com/search?q=image+pre-loading&amp;oq=image+pre-loading" target="_blank" rel="noopener">image pre-loading</a></li>
 </ol>
 
-          
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://blog.daolanfler.com/2018/04/06/this-in-JavaScript-s-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/destiny.jpg">
       <meta itemprop="name" content="DAOLANFLER">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/destiny.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="天方夜坛">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/04/06/this-in-JavaScript-s-function/" class="post-title-link" itemprop="url">this in JavaScript's function</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/04/06/this-in-JavaScript-s-function/" class="post-title-link" itemprop="url">this in JavaScript's function</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-04-06 23:35:06" itemprop="dateCreated datePublished" datetime="2018-04-06T23:35:06+08:00">2018-04-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-03-10 18:11:53" itemprop="dateModified" datetime="2019-03-10T18:11:53+08:00">2019-03-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2018/04/06/this-in-JavaScript-s-function/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/06/this-in-JavaScript-s-function/" itemprop="commentCount"></span>
-                </a>
               </span>
-            
-          
 
           
-          
-
-          
-
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/04/06/this-in-JavaScript-s-function/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/06/this-in-JavaScript-s-function/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -953,12 +523,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h1 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h1><p>最近在看 GitHub 上的一本书，You-Dont-Know-JS ，这本书讲解的this非常清楚：要理解this的指向，首先得知道call-site这个概念：</p>
+          <h1 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h1><p>最近在看 GitHub 上的一本书，You-Dont-Know-JS ，这本书讲解的this非常清楚：要理解this的指向，首先得知道call-site这个概念：</p>
 <blockquote>
 <p>To understand this binding, we have to understand the call-site: the location in code where a function is called (not where it’s declared).</p>
 </blockquote>
@@ -975,224 +540,125 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// `this` here is lexically adopted from `foo()`</span></span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.a )</span><br><span class="line">  &#125;,<span class="number">100</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call( obj ) <span class="comment">// 2 将 foo 中的 `this` 绑定到了 obj 上，对应情形 2</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span> <span class="comment">// lexical capture of `this`</span></span><br><span class="line">  setTimeout( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( self.a )</span><br><span class="line">  &#125;, <span class="number">100</span> )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj) <span class="comment">// 2 注意这里不是箭头函数</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// return an arrow function</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.lot(<span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  a: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  a: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = foo.call(obj1)</span><br><span class="line">bar.call(obj2) <span class="comment">// 2 not 3! 这证明了箭头函数中的 `this` 无法通过 bind 来改变。</span></span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
+
 
 
           </div>
           
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/destiny.jpg" alt="DAOLANFLER">
-            
-              <p class="site-author-name" itemprop="name">DAOLANFLER</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/daolanfler" title="GitHub &rarr; https://github.com/daolanfler" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:daolanfler@gmail.com" title="E-Mail &rarr; mailto:daolanfler@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/daolanfler" title="WeiBo &rarr; https://weibo.com/daolanfler" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>WeiBo</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
       </div>
+      <!--/noindex-->
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="DAOLANFLER" src="/images/destiny.jpg">
+  <p class="site-author-name" itemprop="name">DAOLANFLER</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/daolanfler" title="GitHub &rarr; https://github.com/daolanfler" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:daolanfler@gmail.com" title="E-Mail &rarr; mailto:daolanfler@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/daolanfler" title="Weibo &rarr; https://weibo.com/daolanfler" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
 
-      
+
+
+      </div>
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">DAOLANFLER</span>
-
-  
-
-  
 </div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
-
-
-
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  </div>
 
         
+
+
+
+
 
 
 
@@ -1204,133 +670,49 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
   </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://daolanfler-blog.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
   }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=7.0.1"></script>
-
-  <script src="/js/src/motion.js?v=7.0.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
-
-
-
-  
-
-  
-
-
-  <script src="/js/src/next-boot.js?v=7.0.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-  
-  <script id="dsq-count-scr" src="https://daolanfler-blog.disqus.com/count.js" async></script>
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
