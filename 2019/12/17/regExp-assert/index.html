@@ -53,14 +53,14 @@
   <meta name="description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="regExp_assert">
+<meta property="og:title" content="正则表达式预检查">
 <meta property="og:url" content="http://blog.daolanfler.me/2019/12/17/regExp-assert/index.html">
 <meta property="og:site_name" content="天方夜坛">
 <meta property="og:description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-17T06:16:23.258Z">
+<meta property="og:updated_time" content="2019-12-17T06:19:09.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="regExp_assert">
+<meta name="twitter:title" content="正则表达式预检查">
 <meta name="twitter:description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
 
 <link rel="canonical" href="http://blog.daolanfler.me/2019/12/17/regExp-assert/">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>regExp_assert | 天方夜坛</title>
+  <title>正则表达式预检查 | 天方夜坛</title>
   
 
 
@@ -189,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          regExp_assert
+          正则表达式预检查
         </h1>
 
         <div class="post-meta">
@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-12-17 14:14:14 / Modified: 14:16:23" itemprop="dateCreated datePublished" datetime="2019-12-17T14:14:14+08:00">2019-12-17</time>
+              <time title="Created: 2019-12-17 14:14:14 / Modified: 14:19:09" itemprop="dateCreated datePublished" datetime="2019-12-17T14:14:14+08:00">2019-12-17</time>
             </span>
 
           
@@ -228,10 +228,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><p>(?=pattern) look ahead positive assert 正向肯定预检查</p>
-<p>(?!pattern) look ahead negative assert 正向否定预检查</p>
-<p>(?&lt;=pattern) look behind positive assert 反向肯定预检查</p>
-<p>(?&lt;!pattern) look behind negative assert 反向否定预检查</p>
+        <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><p><code>(?=pattern)</code> look ahead positive assert 正向肯定预检查</p>
+<p><code>(?!pattern)</code> look ahead negative assert 正向否定预检查</p>
+<p><code>(?&lt;=pattern)</code> look behind positive assert 反向肯定预检查</p>
+<p><code>(?&lt;!pattern)</code> look behind negative assert 反向否定预检查</p>
 <h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ahead = <span class="regexp">/windows(?=95|NT|xp)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ahead1 = <span class="regexp">/(?=95|NT|xp)windows/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> behind = <span class="regexp">/(?&lt;=95|NT|xp)windows/</span>;</span><br><span class="line"></span><br><span class="line">ahead.exec(<span class="string">"windows95"</span>);</span><br><span class="line"><span class="comment">// 结果 [ 'windows', index: 0, input: 'windows95' ]  匹配到 windows</span></span><br><span class="line"></span><br><span class="line">behind.exec(<span class="string">"NTwindows"</span>);</span><br><span class="line"><span class="comment">// 结果 [ 'windows', index: 2, input: 'NTwindows' ]  匹配到 windows</span></span><br><span class="line"></span><br><span class="line">ahead1.exec(<span class="string">"95windows"</span>);</span><br><span class="line"><span class="comment">// 结果 null 因为预检查不消耗字符，会从 95 开始匹配</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ahead2 = <span class="regexp">/(?=95|NT|xp)95windows/</span>;</span><br><span class="line"></span><br><span class="line">ahead2.exec(<span class="string">"95windows"</span>);</span><br><span class="line"><span class="comment">// 结果 [ '95windows', index: 0, input: '95windows' ]</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -438,7 +438,7 @@
         config: {page: {
             url: "http://blog.daolanfler.me/2019/12/17/regExp-assert/",
             identifier: "2019/12/17/regExp-assert/",
-            title: "regExp_assert"
+            title: "正则表达式预检查"
           }
         }
       });
