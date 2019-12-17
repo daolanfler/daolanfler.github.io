@@ -50,16 +50,20 @@
   };
 </script>
 
-  <meta name="keywords" content="前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="天方夜坛">
-<meta property="og:url" content="http://blog.daolanfler.me/archives/2018/04/index.html">
+  <meta name="description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
+<meta name="keywords" content="正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="regExp_assert">
+<meta property="og:url" content="http://blog.daolanfler.me/2019/12/17/regExp-assert/index.html">
 <meta property="og:site_name" content="天方夜坛">
+<meta property="og:description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-17T06:16:23.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天方夜坛">
+<meta name="twitter:title" content="regExp_assert">
+<meta name="twitter:description" content="名词(?=pattern) look ahead positive assert 正向肯定预检查 (?!pattern) look ahead negative assert 正向否定预检查 (?&amp;lt;=pattern) look behind positive assert 反向肯定预检查 (?&amp;lt;!pattern) look behind negative assert 反向否定预检查">
 
-<link rel="canonical" href="http://blog.daolanfler.me/archives/2018/04/">
+<link rel="canonical" href="http://blog.daolanfler.me/2019/12/17/regExp-assert/">
 
 
 <script id="page-configurations">
@@ -67,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>Archive | 天方夜坛</title>
+  <title>regExp_assert | 天方夜坛</title>
   
 
 
@@ -167,53 +171,113 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.daolanfler.me/2019/12/17/regExp-assert/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/destiny.jpg">
+      <meta itemprop="name" content="DAOLANFLER">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天方夜坛">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          regExp_assert
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-17 14:14:14 / Modified: 14:16:23" itemprop="dateCreated datePublished" datetime="2019-12-17T14:14:14+08:00">2019-12-17</time>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/17/regExp-assert/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/17/regExp-assert/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2018</h1>
+        <h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><p>(?=pattern) look ahead positive assert 正向肯定预检查</p>
+<p>(?!pattern) look ahead negative assert 正向否定预检查</p>
+<p>(?&lt;=pattern) look behind positive assert 反向肯定预检查</p>
+<p>(?&lt;!pattern) look behind negative assert 反向否定预检查</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ahead = <span class="regexp">/windows(?=95|NT|xp)/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ahead1 = <span class="regexp">/(?=95|NT|xp)windows/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> behind = <span class="regexp">/(?&lt;=95|NT|xp)windows/</span>;</span><br><span class="line"></span><br><span class="line">ahead.exec(<span class="string">"windows95"</span>);</span><br><span class="line"><span class="comment">// 结果 [ 'windows', index: 0, input: 'windows95' ]  匹配到 windows</span></span><br><span class="line"></span><br><span class="line">behind.exec(<span class="string">"NTwindows"</span>);</span><br><span class="line"><span class="comment">// 结果 [ 'windows', index: 2, input: 'NTwindows' ]  匹配到 windows</span></span><br><span class="line"></span><br><span class="line">ahead1.exec(<span class="string">"95windows"</span>);</span><br><span class="line"><span class="comment">// 结果 null 因为预检查不消耗字符，会从 95 开始匹配</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ahead2 = <span class="regexp">/(?=95|NT|xp)95windows/</span>;</span><br><span class="line"></span><br><span class="line">ahead2.exec(<span class="string">"95windows"</span>);</span><br><span class="line"><span class="comment">// 结果 [ '95windows', index: 0, input: '95windows' ]</span></span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-04-06T23:35:06+08:00"
-              content="2018-04-06">
-          04-06
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/正则表达式/" rel="tag"># 正则表达式</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/04/06/this-in-JavaScript-s-function/" itemprop="url">
-            <span itemprop="name">this in JavaScript's function</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/04/js-the-good-part-snippets/" rel="next" title="JavaScript 语言精粹代码片段">
+                  <i class="fa fa-chevron-left"></i> JavaScript 语言精粹代码片段
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
         </div>
           
@@ -238,6 +302,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#名词"><span class="nav-number">1.</span> <span class="nav-text">名词</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -364,6 +429,27 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://blog.daolanfler.me/2019/12/17/regExp-assert/",
+            identifier: "2019/12/17/regExp-assert/",
+            title: "regExp_assert"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://daolanfler-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
 </script>
 
 </body>
